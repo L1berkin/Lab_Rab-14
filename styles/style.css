@@ -58,7 +58,7 @@
 }
 
 .main {
-  background-image: url(/assets/orange-floor-and-wall-background-3d-rendering_43151-1031.jpg);
+  background-image: url(assets/orange-floor-and-wall-background-3d-rendering_43151-1031.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
@@ -164,7 +164,7 @@
 .ampermetr {
   border-radius: 10px;
   text-align: center;
-  background-image: url(/assets/amper.png);
+  background-image: url(assets/amper.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 400px;
@@ -184,7 +184,7 @@
 .voltmetr {
   border-radius: 10px;
   text-align: center;
-  background-image: url(/assets/volt.png);
+  background-image: url(assets/volt.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 450px;
@@ -239,7 +239,6 @@
   .voltmetr {
     width: 640px;
     height: 320px;
-    border: 1px solid red;
   }
   .voltmetr__range {
     margin-top: 62px;
