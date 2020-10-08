@@ -1,0 +1,365 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+/* input-field */
+.field {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #7e756a;
+  width: 90px;
+  text-align: center;
+  color: #fff;
+  outline: none;
+}
+
+.header {
+  width: 100%;
+  height: 10vh;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+}
+
+.header__logo {
+  margin: 0 5% 0 8%;
+  width: 6%;
+}
+
+.header__title {
+  color: #fff;
+}
+
+.wrapper {
+  width: 80%;
+  height: 80vh;
+  padding: 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main {
+  background-image: url(/assets/orange-floor-and-wall-background-3d-rendering_43151-1031.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.up-block {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.midle-block {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.midle-block__range {
+  width: 20%;
+  min-width: 200px;
+  margin: 0 15%;
+}
+
+.curtain-block {
+  text-align: center;
+  margin: 0 10%;
+}
+
+.curtain-block__curtain {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.769);
+  border-radius: 50%;
+  outline: none;
+}
+
+.curtain-block__curtain:hover {
+  border: 2px solid black;
+}
+
+.curtain-block__curtain:active {
+  background-color: rgba(0, 0, 0, 0.558);
+}
+
+.curtain-block__curtain:checked {
+  background-color: rgba(101, 101, 101, 0.353);
+}
+
+.curtain-block__curtain:checked:active {
+  background-color: rgba(0, 0, 0, 0.558);
+}
+
+.curtain-block__text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.down-block {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 10vh;
+  min-height: 70px;
+}
+
+.down-block .dist-range {
+  width: 80%;
+}
+
+.down-block .dist-title {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* -- */
+.ampermetr {
+  border-radius: 10px;
+  text-align: center;
+  background-image: url(/assets/amper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 400px;
+  height: 220px;
+}
+
+.ampermetr__range {
+  width: 82%;
+  margin-top: 37px;
+  margin-bottom: 95px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: rgba(101, 101, 101, 0.353);
+}
+
+.voltmetr {
+  border-radius: 10px;
+  text-align: center;
+  background-image: url(/assets/volt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 450px;
+  height: 220px;
+}
+
+.voltmetr__range {
+  width: 80%;
+  margin-top: 37px;
+  margin-bottom: 95px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: rgba(101, 101, 101, 0.353);
+}
+
+.footer {
+  min-height: 10vh;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer__logo {
+  width: 18%;
+}
+
+.footer__text {
+  color: #fff;
+  width: 30%;
+  max-height: 10vh;
+}
+
+@media screen and (min-width: 1600px) {
+  .field {
+    width: 130px;
+    font-size: 1.4em;
+  }
+  .ampermetr {
+    width: 570px;
+    height: 320px;
+  }
+  .ampermetr__range {
+    margin-top: 62px;
+  }
+  .voltmetr {
+    width: 640px;
+    height: 320px;
+    border: 1px solid red;
+  }
+  .voltmetr__range {
+    margin-top: 62px;
+    margin-left: 15px;
+  }
+  .curtain-block__curtain {
+    width: 50px;
+    height: 50px;
+  }
+  .curtain-block__text {
+    font-size: 1.4em;
+  }
+  .dist-title {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .ampermetr {
+    width: 340px;
+    height: 190px;
+  }
+  .ampermetr__range {
+    margin-top: 30px;
+  }
+  .voltmetr {
+    width: 380px;
+    height: 190px;
+  }
+  .voltmetr__range {
+    margin-top: 32px;
+    width: 82%;
+    margin-left: 5px;
+  }
+  .footer__text {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header__title {
+    font-size: 1.5em;
+  }
+  .ampermetr {
+    width: 260px;
+    height: 150px;
+  }
+  .ampermetr__range {
+    margin-top: 22px;
+    margin-left: 10px;
+    margin-bottom: 80px;
+    width: 86%;
+  }
+  .voltmetr {
+    width: 300px;
+    height: 150px;
+  }
+  .voltmetr__range {
+    margin-top: 22px;
+    margin-left: 10px;
+    margin-bottom: 80px;
+    width: 84%;
+  }
+  .footer__text {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    width: 15%;
+  }
+  .header__title {
+    font-size: 1.4em;
+  }
+  .ampermetr {
+    width: 280px;
+  }
+  .ampermetr__range {
+    width: 83%;
+    margin-left: 0;
+  }
+  .voltmetr {
+    width: 280px;
+    height: 140px;
+  }
+  .voltmetr__range {
+    margin-bottom: 60px;
+  }
+  .footer__text {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .ampermetr {
+    width: 240px;
+    height: 110px;
+  }
+  .ampermetr__range {
+    margin-bottom: 40px;
+  }
+  .voltmetr {
+    width: 240px;
+    height: 120px;
+  }
+  .voltmetr__range {
+    margin-top: 18px;
+  }
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__logo {
+    width: 40%;
+    margin: 20px 0;
+  }
+  .footer__text {
+    margin: 0 0 20px;
+  }
+}

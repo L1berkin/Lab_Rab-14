@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Исследование внутреннего фотоэффекта</title>
+</head>
+
+<body>
+  <header class="header">
+    <img src="/assets/physicsleti2.jpg" alt="Logo" class="header__logo">
+    <h1 class="header__title">Исследование внутреннего фотоэффекта</h1>
+  </header>
+  <main class="main">
+    <div class="wrapper">
+      <div class="up-block">
+        <div class="ampermetr">
+          <input type="range" min="0" max="100" value="0" class="ampermetr__range" step="0,01" disabled>
+          <input type="text" class="ampermetr__value field" value="0.00">
+        </div>
+        <div class="voltmetr">
+          <input type="range" min="0" max="20" value="0" class="voltmetr__range" step="1" disabled>
+          <input type="text" class="voltmetr__value field" value="0">
+        </div>
+      </div>
+      <div class="midle-block">
+        <div class="curtain-block">
+          <p class="curtain-block__text">Шторка открыта</p>
+          <input type="checkbox" name="open-close" class="curtain-block__curtain">
+        </div>
+        <input type="range" min="0" max="20" value="0" class="midle-block__range" step="1">
+      </div>
+      <div class="down-block">
+        <p class="dist-title">Расстояние</p>
+        <input type="text" class="dist-value field" value="0">
+        <input type="range" min="0" max="40" value="0" class="dist-range" step="1">
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <img src="/assets/spbetu-logo-ru.svg" alt="ETU logo" class="footer__logo">
+    <p class="footer__text">Создано при поддержке кафедры физики Санкт-Петербургского Государственного Электротехнического Университета</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
