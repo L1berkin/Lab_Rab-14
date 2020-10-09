@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
   <title>Исследование внутреннего фотоэффекта</title>
 </head>
@@ -13,6 +14,11 @@
   <header class="header">
     <img src="assets/physicsleti2.jpg" alt="Logo" class="header__logo">
     <h1 class="header__title">Исследование внутреннего фотоэффекта</h1>
+    <a href="#" class="header__link">О программе</a>
+    <div class="link__content">
+      <p class="link__text">Данная виртуальная лабораторная работа по исследованию внутреннего фотоэффекта разработана
+        студентом группы 9201 Денисовым Д.С. под руководством доцента кафедры физики СПБГЭТУ к.ф.-м.н. И.Л. Шйнмана.</p>
+    </div>
   </header>
   <main class="main">
     <div class="wrapper">
@@ -36,13 +42,20 @@
       <div class="down-block">
         <p class="dist-title">Расстояние</p>
         <input type="text" class="dist-value field" value="0" readonly>
-        <input type="range" min="0" max="40" value="0" class="dist-range" step="1">
+        <div class="dist-block">
+          <img class="dist-block__lamp" src="assets/lamp.png" alt="Лампа">
+          <div class="dist-block__ruler">
+            <img src="assets/priemnik.png" alt="" class="down-block__priemnik">
+            <input type="range" min="0" max="40" value="0" class="dist-range" step="1">
+          </div>
+        </div>
       </div>
     </div>
   </main>
   <footer class="footer">
     <img src="assets/spbetu-logo-ru.svg" alt="ETU logo" class="footer__logo">
-    <p class="footer__text">Создано при поддержке кафедры физики Санкт-Петербургского Государственного Электротехнического Университета</p>
+    <p class="footer__text">Создано при поддержке кафедры физики Санкт-Петербургского Государственного
+      Электротехнического Университета</p>
   </footer>
 
   <script src="script.js"></script>

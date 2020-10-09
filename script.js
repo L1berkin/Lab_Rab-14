@@ -9,6 +9,8 @@ const $distValue = document.querySelector('.dist-value')
 
 const $curtain = document.querySelector('.curtain-block__curtain')
 const $curtainText = document.querySelector('.curtain-block__text')
+const $priemnik = document.querySelector('.down-block__priemnik')
+const $lamp = document.querySelector('.dist-block__lamp')
 
 const J = 25
 const S = 96
@@ -38,6 +40,7 @@ function calc(U, E, r) {
 $distRange.oninput = (event) => {
   const r = +event.target.value
   const r2 = r * r
+  $priemnik.style.left = r * 1.22 + 'vw'
   E = J / r2
   $distValue.value = r
   U = +$voltValue.value
@@ -60,8 +63,12 @@ $curtain.addEventListener('click', (event) => {
   if (event.target.checked) {
     I = It
     $curtainText.textContent = 'Шторка закрыта'
+    $lamp.classList.remove('open')
+    $lamp.classList.add('hide')
   } else {
     I = It + If
+    $lamp.classList.remove('hide')
+    $lamp.classList.add('open')
     $curtainText.textContent = 'Шторка открыта'
   }
   $amperValue.value = I.toFixed(2)
