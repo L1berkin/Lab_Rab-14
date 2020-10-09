@@ -29,7 +29,7 @@ function calc(U, E, r) {
   $curtain.checked ? I = It : I = It + If
   const dist = +$distValue.value
   if (dist === 0 || I > 100) {
-    $amperValue.value = 'max'
+    $amperValue.value = ''
     $amperRange.value = 100
   } else {
     $amperRange.value = I.toFixed(2)
@@ -63,21 +63,21 @@ $curtain.addEventListener('click', (event) => {
   if (event.target.checked) {
     I = It
     $curtainText.textContent = 'Шторка закрыта'
-    $lamp.classList.remove('open')
-    $lamp.classList.add('hide')
+    // $lamp.classList.remove('open')
+    // $lamp.classList.add('hide')
+    $priemnik.src = 'assets/priemnik-close.png'
   } else {
+    $priemnik.src = 'assets/priemnik.png'
     I = It + If
-    $lamp.classList.remove('hide')
-    $lamp.classList.add('open')
+    // $lamp.classList.remove('hide')
+    // $lamp.classList.add('open')
     $curtainText.textContent = 'Шторка открыта'
   }
   if (I > 100) {
-    console.log('bug')
-    I = 'max'
+    I = ''
     $amperValue.value = I
     $amperRange.value = 100
   } else {
-    console.log('smal')
     $amperValue.value = I.toFixed(2)
     $amperRange.value = I.toFixed(2)
   }

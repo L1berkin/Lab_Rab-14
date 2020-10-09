@@ -16,7 +16,7 @@
     <h1 class="header__title">Исследование внутреннего фотоэффекта</h1>
     <a href="#" class="header__link">О программе</a>
     <div class="link__content">
-      <p class="link__text">Данная виртуальная лабораторная работа по исследованию внутреннего фотоэффекта разработана
+      <p class="link__text">Виртуальная лабораторная работа по исследованию внутреннего фотоэффекта разработана
         студентом группы 9201 Денисовым Д.С. под руководством доцента кафедры физики СПБГЭТУ к.ф.-м.н. И.Л. Шйнмана.</p>
     </div>
   </header>
@@ -34,13 +34,17 @@
       </div>
       <div class="midle-block">
         <div class="curtain-block">
-          <p class="curtain-block__text">Шторка открыта</p>
+          <p class="curtain-block__text text">Шторка открыта</p>
           <input type="checkbox" name="open-close" class="curtain-block__curtain">
         </div>
-        <input type="range" min="0" max="20" value="0" class="midle-block__range" step="0.1">
+        <div class="midle-block__2">
+          <p class="midle-block__text text">Регулировка напряжения</p>
+          <input type="range" min="0" max="20" value="0" class="midle-block__range" step="0.1">
+        </div>
       </div>
       <div class="down-block">
-        <p class="dist-title">Расстояние</p>
+        <p class="dist-title text">Расстояние</p>
+        <p class="cm">см</p>
         <input type="text" class="dist-value field" value="0" readonly>
         <div class="dist-block">
           <img class="dist-block__lamp" src="assets/lamp.png" alt="Лампа">
@@ -54,8 +58,7 @@
   </main>
   <footer class="footer">
     <img src="assets/spbetu-logo-ru.svg" alt="ETU logo" class="footer__logo">
-    <p class="footer__text">Создано при поддержке кафедры физики Санкт-Петербургского Государственного
-      Электротехнического Университета</p>
+    <p class="footer__text">Кафедра физики СПбГЭТУ "ЛЭТИ" </p>
   </footer>
 
   <script src="script.js"></script>

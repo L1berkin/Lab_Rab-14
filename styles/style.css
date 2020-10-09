@@ -5,6 +5,24 @@
   font-family: "Nunito", sans-serif;
 }
 
+.text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-bottom: 1vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cm {
+  color: #fff;
+  position: relative;
+  top: 1.35vw;
+  left: 1.2vw;
+}
+
 /* input-field */
 .field {
   border: 1px solid black;
@@ -156,8 +174,22 @@
       flex-wrap: wrap;
 }
 
-.midle-block__range {
+.midle-block__2 {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.midle-block__range {
+  width: 100%;
   min-width: 200px;
   margin: 0 15%;
 }
@@ -238,8 +270,20 @@
   width: 80%;
   margin-left: 9.6%;
   position: absolute;
+  z-index: 4;
   left: 0;
   bottom: 0;
+}
+
+.down-block .dist-range:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin: 0.45vw 0 0 0;
+  width: 100%;
+  height: 2.8vw;
+  background-image: url(/assets/ruler.png);
+  background-size: cover;
 }
 
 .down-block .dist-title {
@@ -362,6 +406,7 @@
   color: #fff;
   width: 30%;
   max-height: 10vh;
+  font-size: 1.5em;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -369,6 +414,9 @@
 }
 
 @media screen and (min-width: 1600px) {
+  .cm {
+    top: 1.55vw;
+  }
   .field {
     width: 130px;
     font-size: 1.4em;
@@ -401,13 +449,26 @@
 }
 
 @media screen and (min-width: 1230px) {
+  .cm {
+    top: 1.5vw;
+  }
   .curtain-block__curtain {
     width: 50px;
     height: 50px;
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .cm {
+    top: 1.2vw;
+  }
+}
+
 @media screen and (max-width: 1230px) {
+  .cm {
+    top: 1.9vw;
+    left: 1.9vw;
+  }
   .main {
     padding: 0;
   }
@@ -431,11 +492,15 @@
     margin-left: 5px;
   }
   .footer__text {
-    font-size: 0.8em;
+    font-size: 1.4em;
   }
 }
 
 @media screen and (max-width: 992px) {
+  .cm {
+    top: 2.6vw;
+    left: 2.2vw;
+  }
   .header__title {
     font-size: 1.2em;
   }
@@ -465,6 +530,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .cm {
+    top: 3vw;
+    left: 2.2vw;
+  }
   .header__logo {
     margin-left: 2vw;
     width: 10%;
@@ -494,11 +563,15 @@
     margin-bottom: 60px;
   }
   .footer__text {
-    font-size: 0.6em;
+    font-size: 1.1em;
   }
 }
 
 @media screen and (max-width: 430px) {
+  .cm {
+    top: 5.5vw;
+    left: 4.5vw;
+  }
   .ampermetr {
     width: 240px;
     height: 110px;
