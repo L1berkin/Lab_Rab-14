@@ -67,6 +67,11 @@ $curtain.addEventListener('click', (event) => {
     $lamp.classList.add('hide')
   } else {
     I = It + If
+    if (I > 100) {
+      I = 'max'
+      $amperValue.value = I
+      $amperRange.value = 100
+    }
     $lamp.classList.remove('hide')
     $lamp.classList.add('open')
     $curtainText.textContent = 'Шторка открыта'
