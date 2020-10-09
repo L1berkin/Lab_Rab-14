@@ -71,6 +71,14 @@ $curtain.addEventListener('click', (event) => {
     $lamp.classList.add('open')
     $curtainText.textContent = 'Шторка открыта'
   }
-  $amperValue.value = I.toFixed(2)
-  $amperRange.value = I.toFixed(2)
+  if (I > 100) {
+    console.log('bug')
+    I = 'max'
+    $amperValue.value = I
+    $amperRange.value = 100
+  } else {
+    console.log('smal')
+    $amperValue.value = I.toFixed(2)
+    $amperRange.value = I.toFixed(2)
+  }
 })
