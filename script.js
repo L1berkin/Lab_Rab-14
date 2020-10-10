@@ -11,6 +11,7 @@ const $curtain = document.querySelector('.curtain-block__curtain')
 const $curtainText = document.querySelector('.curtain-block__text')
 const $priemnik = document.querySelector('.down-block__priemnik')
 const $lamp = document.querySelector('.dist-block__lamp')
+const $shtora = document.querySelector('.curtain')
 
 const J = 25
 const S = 96
@@ -40,7 +41,7 @@ function calc(U, E, r) {
 $distRange.oninput = (event) => {
   const r = +event.target.value
   const r2 = r * r
-  $priemnik.style.left = r * 1.22 + 'vw'
+  $priemnik.style.left = r * 1.24 + 'vw'
   E = J / r2
   $distValue.value = r
   U = +$voltValue.value
@@ -63,14 +64,14 @@ $curtain.addEventListener('click', (event) => {
   if (event.target.checked) {
     I = It
     $curtainText.textContent = 'Шторка закрыта'
-    // $lamp.classList.remove('open')
-    // $lamp.classList.add('hide')
-    $priemnik.src = 'assets/priemnik-close.png'
+    $shtora.src = 'assets/curtain-open.png'
+    $shtora.classList.remove('close')
+    // $shtora.classList.add('hide')
   } else {
-    $priemnik.src = 'assets/priemnik.png'
     I = It + If
-    // $lamp.classList.remove('hide')
-    // $lamp.classList.add('open')
+    $shtora.src = 'assets/curtain-close.png'
+    // $shtora.classList.remove('hide')
+    $shtora.classList.add('close')
     $curtainText.textContent = 'Шторка открыта'
   }
   if (I > 100) {
