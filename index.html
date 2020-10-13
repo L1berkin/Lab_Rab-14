@@ -12,54 +12,56 @@
 
 <body>
   <header class="header">
-    <img src="assets/physicsleti2.jpg" alt="Logo" class="header__logo">
+    <img src="assets/physicsleti2.jpg" alt="логотип" class="header__logo" width="100%">
     <h1 class="header__title">Исследование внутреннего фотоэффекта</h1>
     <a href="#" class="header__link">О программе</a>
     <div class="link__content">
       <p class="link__text">Виртуальная лабораторная работа по исследованию внутреннего фотоэффекта разработана
-        студентом группы 9201 Денисовым Д.С. под руководством доцента кафедры физики СПБГЭТУ к.ф.-м.н. И.Л. Шейнмана.</p>
+        студентом группы 9201 Денисовым Д.С. под руководством доцента кафедры физики СПБГЭТУ к.ф.-м.н. И.Л. Шейнмана.
+      </p>
     </div>
   </header>
   <main class="main">
     <div class="wrapper">
-      <div class="up-block">
+      <section class="appliances">
         <div class="ampermetr">
-          <input type="range" min="0" max="100" value="0" class="ampermetr__range" step="0.01" disabled>
+          <input type="range" class="ampermetr__range dis-range" min="0" max="100" value="0" step="0.01" disabled>
           <input type="text" class="ampermetr__value field" value="0.00" readonly>
         </div>
         <div class="voltmetr">
-          <input type="range" min="0" max="20" value="0" class="voltmetr__range" step="0.1" disabled>
+          <input type="range" class="voltmetr__range dis-range" min="0" max="20" value="0" step="0.1" disabled>
           <input type="text" class="voltmetr__value field" value="0" readonly>
         </div>
-      </div>
-      <div class="midle-block">
-        <div class="curtain-block">
-          <p class="curtain-block__text text">Шторка открыта</p>
-          <input type="checkbox" name="open-close" class="curtain-block__curtain">
+      </section>
+      <section class="control">
+        <div class="curtain-setings">
+          <p class="curtain-setings__title">Шторка открыта</p>
+          <input type="checkbox" class="curtain-setings__check">
         </div>
-        <div class="midle-block__2">
-          <p class="midle-block__text text">Регулировка напряжения</p>
-          <input type="range" min="0" max="20" value="0" class="midle-block__range" step="0.1">
+        <div class="voltmetr-setings">
+          <p class="voltmetr-setings__title">Регулировка напряжения</p>
+          <input type="range" class="voltmetr-setings__range" min="0" max="20" step="0.1" value="0">
         </div>
-      </div>
-      <div class="down-block">
-        <p class="dist-title text">Расстояние</p>
-        <p class="cm">см</p>
-        <input type="text" class="dist-value field" value="0" readonly>
-        <div class="dist-block">
-          <img class="dist-block__lamp" src="assets/Lampa.png" alt="Лампа">
-          <img src="assets/curtain-close.png" alt="шторка" class="curtain close">
-          <div class="dist-block__ruler">
-            <img src="assets/priemnik.png" alt="" class="down-block__priemnik">
-            <input type="range" min="0" max="40" value="0" class="dist-range" step="1">
-          </div>
+      </section>
+      <section class="dist-info">
+        <p class="dist-info__title">Расстояние</p>
+        <input type="text" class="dist-info__value field" value="0 см" readonly>
+      </section>
+      <section class="installation">
+        <img src="assets/Lampa.png" alt="Лампа" class="installation__lamp">
+        <div class="installation__runner">
+          <span class="cap open"></span>
+          <img src="assets/priemnik.png" alt="Приемник" class="priemnik">
+          <input type="range" class="ruler-range" min="0" max="40" step="1" value="0">
         </div>
-      </div>
+      </section>
     </div>
   </main>
   <footer class="footer">
-    <img src="assets/spbetu-logo-ru.svg" alt="ETU logo" class="footer__logo">
-    <p class="footer__text">Кафедра физики "ЛЭТИ" </p>
+    <a href="https://etu.ru/" class="footer__logo">
+      <img src="assets/spbetu-logo-ru.svg" alt="Логоти ЛЭТИ" width="100%">
+    </a>
+    <p class="footer__text">Кафедра физики</p>
   </footer>
 
   <script src="script.js"></script>
