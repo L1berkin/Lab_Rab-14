@@ -48,8 +48,8 @@ function calc(U, E, r) {
 $distRange.oninput = (event) => {
   const r = +event.target.value
   const r2 = r * r
-  $priemnik.style.left = r * 1.37 + 'vw'
-  $cap.style.left = r * 1.37 + 'vw'
+  $priemnik.style.left = r * 1.48 + 'vw'
+  $cap.style.left = r * 1.48 + 'vw'
   E = J / r2
   $distValue.value = r + ' см'
   U = +$voltValue.value

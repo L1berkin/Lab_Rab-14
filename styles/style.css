@@ -43,6 +43,7 @@
 .header .header__logo {
   margin: 0 6% 0 8%;
   width: 7%;
+  display: block;
 }
 
 .header .header__title {
@@ -248,6 +249,7 @@
 
 .installation__lamp {
   width: 30%;
+  margin-right: -5vw;
 }
 
 .installation__runner {
@@ -264,7 +266,7 @@
 
 .installation .priemnik {
   width: 20%;
-  margin: 10px auto -3.2vw;
+  margin: 10px 0 -3.2vw 2.85vw;
   position: absolute;
   left: 0;
   bottom: 20px;
@@ -272,16 +274,17 @@
 
 .installation .cap {
   position: absolute;
-  margin-left: 2.2vw;
+  margin-left: 5.3vw;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.6);
   width: 0.7vw;
-  height: 5vw;
+  height: 5.2vw;
   background-color: #383737;
   -webkit-transition-property: top;
   transition-property: top;
   -webkit-transition-duration: 1.5s;
           transition-duration: 1.5s;
+  z-index: 3;
 }
 
 .installation .ruler-range {
@@ -329,11 +332,17 @@
 }
 
 .open {
-  top: -3vw;
+  top: -4vw;
 }
 
 .close {
-  top: 1.15vw;
+  top: 0.2vw;
+}
+
+@media screen and (max-width: 1300px) {
+  .close {
+    top: 0vw;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -375,10 +384,10 @@
     margin-left: 8px;
   }
   .open {
-    top: -3.8vw;
+    top: -4.5vw;
   }
   .close {
-    top: 0.4vw;
+    top: -0.35vw;
   }
 }
 
@@ -438,10 +447,16 @@
     font-size: 1.3em;
   }
   .open {
-    top: -3.8vw;
+    top: -4.8vw;
   }
   .close {
-    top: 0vw;
+    top: -0.8vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .close {
+    top: -1.2vw;
   }
 }
 
@@ -500,6 +515,15 @@
     top: -5.6vw;
   }
   .close {
-    top: -1.5vw;
+    top: -1.6vw;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .open {
+    top: -6.8vw;
+  }
+  .close {
+    top: -2.4vw;
   }
 }
