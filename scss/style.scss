@@ -25,6 +25,106 @@
   font-family: "Nunito", sans-serif;
   color: #fff;
 }
+
+.close-s {
+  transform: translate(-101%, -1%);
+}
+
+.big-Photo {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 5vh auto;
+  z-index: 30;
+}
+
+.back-window-photo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.394);
+  z-index: 25;
+  text-align: center;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: -1vw;
+  left: 0;
+  width: 30%;
+  background-color: #fff;
+  text-align: center;
+  padding: 0.4em 1em;
+  z-index: 10;
+  transition-duration: 1s;
+
+  &__btn {
+    width: 20%;
+    background-color: rgba(118, 116, 116, 0.102);
+    position: absolute;
+    top: 0;
+    bottom: -1vw;
+    left: 100%;
+    z-index: 21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+
+    span {
+      color: rgba(255, 255, 255, 0.435);
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      background-color: rgba(159, 159, 159, 0.537);
+
+      span {
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+
+  &__title {
+    color: #000;
+    padding: 0.5em 0.4em 0.2em;
+    font-size: 2vw;
+  }
+
+  &__title-album {
+    color: #000;
+    padding: 0.6em 0;
+    font-size: 1.5vw;
+  }
+
+  
+  &__title-settings {
+    font-size: 1.3vw;
+    color: #000;
+  }
+
+  &__album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  .s-photo {
+    width: 46%;
+    margin: 0 2% 1.2vw;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.5s;
+    }
+  }
+}
+
 /* value fields */
 .field {
   border: 1px solid black;
@@ -392,11 +492,11 @@
   .footer__text {
     font-size: 1.3em;
   }
-  
+
   .open {
     top: -4.8vw;
   }
-  
+
   .close {
     top: -0.8vw;
   }
@@ -409,6 +509,18 @@
 }
 
 @media screen and (max-width: 674px) {
+  .sidebar__title {
+   font-size: 3vw;
+  }
+
+  .sidebar__btn span {
+    font-size: 2.2vw;
+  }
+
+  .sidebar__title-album {
+    font-size: 2.5vw;
+  }
+
   .field {
     width: 50px;
     font-size: 0.5em;
@@ -471,6 +583,13 @@
 }
 
 @media screen and (max-width: 570px) {
+  .sidebar .s-photo {
+    width: 100%;
+    margin: 0 0 1.6vw;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
   .open {
     top: -6.8vw;
   }

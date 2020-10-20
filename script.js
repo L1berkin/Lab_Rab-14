@@ -1,19 +1,60 @@
+// Ranges
 const $amperRange = document.querySelector('.ampermetr__range')
 const $voltRange = document.querySelector('.voltmetr__range')
 const $valueRange = document.querySelector('.voltmetr-setings__range')
 const $distRange = document.querySelector('.ruler-range')
-
+// Fields
 const $amperValue = document.querySelector('.ampermetr__value')
 const $voltValue = document.querySelector('.voltmetr__value')
 const $distValue = document.querySelector('.dist-info__value')
-
+// Elements
 const $curtain = document.querySelector('.curtain-setings__check')
 const $curtainText = document.querySelector('.curtain-setings__title')
 const $priemnik = document.querySelector('.priemnik')
 const $lamp = document.querySelector('.installation__lamp')
 const $cap = document.querySelector('.cap')
-// const $shtora = document.querySelector('.curtain')
+// Sidebar
+const menuBtn = document.querySelector('.sidebar__btn')
+const sidebar = document.querySelector('.sidebar')
+const btnText = document.querySelector('.sidebar__open')
+// Sidebar photo
+const sidebarPhotos = document.querySelectorAll('.s-photo')
 
+// Sidebar
+
+// Добавление события открытия фото
+sidebarPhotos.forEach(photo => photo.addEventListener('click', (event) => {
+  const path = event.target.getAttribute('src')
+  const alt = event.target.getAttribute('alt')
+
+  const backWindow = document.createElement('div')
+  backWindow.classList.add('back-window-photo')
+  backWindow.dataset.close = 'close'
+  const templateBigPhoto = `<img src="${path}" alt="${alt}" class="big-Photo">`
+
+  backWindow.insertAdjacentHTML('afterbegin', templateBigPhoto)
+  document.querySelector('main').insertAdjacentElement('afterbegin', backWindow)
+
+  // Добавление события закрытия фото
+  backWindow.addEventListener('click', event => {
+    if (event.target.dataset.close === 'close') {
+      document.querySelector('.back-window-photo').remove()
+    }
+  })
+}))
+
+// Событие открытия / закрытия меню
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.toggle("close-s")
+
+  if (btnText.textContent === `open ${String.fromCharCode(10148)}`) {
+    btnText.textContent = String.fromCharCode(60)
+  } else {
+    btnText.textContent = `open ${String.fromCharCode(10148)}`
+  }
+})
+
+// Instrument configuration
 const J = 25
 const S = 96
 
