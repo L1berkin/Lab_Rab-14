@@ -54,7 +54,7 @@ menuBtn.addEventListener('click', () => {
   }
 })
 
-// Instrument configuration
+// Конфигурация приборов
 const J = 25
 const S = 96
 
@@ -90,7 +90,9 @@ $distRange.oninput = (event) => {
   const r = +event.target.value
   const r2 = r * r
   $priemnik.style.left = r * 1.48 + 'vw'
+  $priemnik.style.marginLeft = '-2.8vw'
   $cap.style.left = r * 1.48 + 'vw'
+  $cap.style.marginLeft = '0'
   E = J / r2
   $distValue.value = r + ' см'
   U = +$voltValue.value

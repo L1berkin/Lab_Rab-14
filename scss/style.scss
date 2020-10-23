@@ -339,8 +339,8 @@
   }
 
   .ruler-range {
-    width: 100%;
-    margin-left: 9.6%;
+    width: 89%;
+    margin-left: 10%; 
     position: absolute;
     z-index: 4;
     left: 0;
@@ -351,8 +351,8 @@
       display: inline-block;
       position: absolute;
       left: 0.1vw;
-      margin: 0.7vw 0 0 0;
-      width: 100%;
+      margin: 0.7vw 0 0 -11%;
+      width: 111%;
       height: 2.6vw;
       background-image: url(../assets/ruler.png);
       background-size: cover;
@@ -403,7 +403,7 @@
 
   .installation .ruler-range:after {
     margin-top: 0.9vw;
-    width: 99.5%;
+    // width: 99.5%;
   }
 
   .ampermetr {
@@ -486,7 +486,7 @@
 
   .installation .ruler-range:after {
     margin-top: 1.15vw;
-    width: 99.5%;
+    // width: 99.5%;
   }
 
   .footer__text {
