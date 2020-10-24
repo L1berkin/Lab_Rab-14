@@ -55,87 +55,98 @@ menuBtn.addEventListener('click', () => {
 })
 
 // Конфигурация приборов
-const J = 25
-const S = 96
+// 
+// При измменении напряжения меняется U => It
+// При изменении r мменяется If => I
+// 
+// При закрытой шторке I = It
+// При открытой шторке I = It + If
 
-let E = 0
-let I = 0
+const R = 3.863
+
+let U = 0
 let It = 0
 let If = 0
-let U = 0
+let r = 0
 
-function calc(U, E, r) {
-  let G
-  +r < 11 ? G = 0.035 * 0.7 * r : G = 0.035 * 0.8 * r
-  It = U * 3.756
-  If = S * G * E * U
-  $curtain.checked ? I = It : I = It + If
-  const dist = +$distValue.value.split(' ')[0]
-  if (I > 100) {
-    $amperValue.value = ''
-    $amperRange.value = 100
-  } else if (U === 0) {
-    $amperValue.value = '0.00'
-    $amperRange.value = 0
-  } else if (dist === 0 && !$curtain.checked) {
-    $amperValue.value = ''
-    $amperRange.value = 100
+// Позиционирование светоприемника
+function positionPriemnik() {
+  $priemnik.style.left = r * 1.45 + 'vw'
+  $priemnik.style.marginLeft = '-2.8vw'
+  $cap.style.left = r * 1.45 + 'vw'
+  $cap.style.marginLeft = '0'
+}
+
+// Изменение текста кнопки
+function editBtnText() {
+  if (!$curtain.checked) {
+    $curtainText.textContent = 'Шторка открыта'
   } else {
-    $amperRange.value = I.toFixed(2)
-    $amperValue.value = I.toFixed(2)
+    $curtainText.textContent = 'Шторка закрыта'
   }
 }
 
-$distRange.oninput = (event) => {
-  const r = +event.target.value
-  const r2 = r * r
-  $priemnik.style.left = r * 1.48 + 'vw'
-  $priemnik.style.marginLeft = '-2.8vw'
-  $cap.style.left = r * 1.48 + 'vw'
-  $cap.style.marginLeft = '0'
-  E = J / r2
-  $distValue.value = r + ' см'
-  U = +$voltValue.value
-  calc(U, E, r)
-  return E
+// Анимация шторки
+function animationCap() {
+  $cap.classList.toggle('open')
+  $cap.classList.toggle('close')
 }
 
-$valueRange.oninput = (event) => {
-  const U = +event.target.value
+// Получение напряжения
+function getU() {
+  U = $valueRange.value
   $voltValue.value = U
   $voltRange.value = U
-  const r = $distValue.value.split(' ')[0]
-  const r2 = r * r
-  E = J / r2
-  calc(U, E, r)
-  return U
 }
-$curtain.addEventListener('click', (event) => {
-  const U = +$voltValue.value
-  const dist = +$distValue.value.split(' ')[0]
-  if (event.target.checked) {
-    $cap.classList.remove('open')
-    $cap.classList.add('close')
-    I = It
-    $curtainText.textContent = 'Шторка закрыта'
-    $amperValue.value = I.toFixed(2)
-    $amperRange.value = I.toFixed(2)
+
+// Получение расстояния
+function getDist() {
+  r = $distRange.value
+  $distValue.value = r + ' см'
+}
+
+// Расчет темнового тока
+function calcIt() {
+  It = U * R
+}
+
+// Расчет фототока
+function calcIf() {
+  const denominator = r + 19
+  If = 5000 * U / denominator * 2
+}
+
+// расчет конечного значения тока
+function calcI() {
+  getU()
+  if (U === 0) {
+
   } else {
-    $cap.classList.remove('close')
-    $cap.classList.add('open')
-    I = It + If
-    $curtainText.textContent = 'Шторка открыта'
-    if (U === 0) {
-      I = 0.00
-      $amperValue.value = '0.00'
-      $amperRange.value = 0.00
-    } else if (I > 100 || dist === 0) {
-      I = ''
-      $amperValue.value = I
-      $amperRange.value = 100
+    calcIt()
+    getDist()
+    positionPriemnik()
+    if (!$curtain.checked) {
+      calcIf()
+      I = It + If
     } else {
+      I = It
+    }
+    $amperRange.value = I.toFixed(2)
+    if (I > 100) {
+      $amperValue.value = ''
+    } else  {
       $amperValue.value = I.toFixed(2)
-      $amperRange.value = I.toFixed(2)
     }
   }
-})
+}
+
+// событие клика на кнопку
+function clickBtn() {
+  calcI()
+  animationCap()
+  editBtnText()
+}
+
+$valueRange.addEventListener('input', calcI)
+$distRange.addEventListener('input', calcI)
+$curtain.addEventListener('click', clickBtn)

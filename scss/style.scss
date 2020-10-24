@@ -317,7 +317,7 @@
 
   .priemnik {
     width: 20%;
-    margin: 10px 0 -3.2vw 2.85vw;
+    margin: 10px 0 -3.5vw 4.45vw;
     position: absolute;
     left: 0;
     bottom: 20px;
@@ -327,7 +327,7 @@
     position: absolute;
     // top: 2.7vh;
     // top: -6vh;
-    margin-left: 5.3vw;
+    margin-left: 7.2vw;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.6);
     width: 0.7vw;
@@ -339,8 +339,8 @@
   }
 
   .ruler-range {
-    width: 89%;
-    margin-left: 10%; 
+    width: 86%;
+    margin-left: 12%; 
     position: absolute;
     z-index: 4;
     left: 0;
@@ -351,8 +351,8 @@
       display: inline-block;
       position: absolute;
       left: 0.1vw;
-      margin: 0.7vw 0 0 -11%;
-      width: 111%;
+      margin: 0.7vw 0 0 -14%;
+      width: 114%;
       height: 2.6vw;
       background-image: url(../assets/ruler.png);
       background-size: cover;
@@ -383,7 +383,7 @@
 }
 
 .close {
-  top: 0.2vw;
+  top: 0.4vw;
 }
 
 @media screen and (max-width: 1300px) {
