@@ -67,7 +67,7 @@ const R = 3.863
 let U = 0
 let It = 0
 let If = 0
-let r = 0
+let r = 5
 
 // Позиционирование светоприемника
 function positionPriemnik() {
@@ -94,49 +94,50 @@ function animationCap() {
 
 // Получение напряжения
 function getU() {
-  U = $valueRange.value
+  U = +$valueRange.value
   $voltValue.value = U
   $voltRange.value = U
 }
 
 // Получение расстояния
 function getDist() {
-  r = $distRange.value
+  r = +$distRange.value
   $distValue.value = r + ' см'
 }
 
 // Расчет темнового тока
 function calcIt() {
-  It = U * R - 0.667
+  if (U === 0) {
+    It = 0
+  } else {
+    It = (U * R) - 0.667
+  }
 }
 
 // Расчет фототока
 function calcIf() {
-  const denominator = r + 19
-  If = 5000 * U / denominator * denominator
+  const denominator = +r + 19
+  const denominator2 = denominator * denominator
+  If = 5000 * U / denominator2
 }
 
 // расчет конечного значения тока
 function calcI() {
   getU()
-  if (U === 0) {
-
+  calcIt()
+  getDist()
+  positionPriemnik()
+  if (!$curtain.checked) {
+    calcIf()
+    I = It + If
   } else {
-    calcIt()
-    getDist()
-    positionPriemnik()
-    if (!$curtain.checked) {
-      calcIf()
-      I = It + If
-    } else {
-      I = It
-    }
-    $amperRange.value = I.toFixed(2)
-    if (I > 100) {
-      $amperValue.value = ''
-    } else  {
-      $amperValue.value = I.toFixed(2)
-    }
+    I = It
+  }
+  $amperRange.value = I.toFixed(2)
+  if (I > 100) {
+    $amperValue.value = ''
+  } else {
+    $amperValue.value = I.toFixed(2)
   }
 }
 
