@@ -107,13 +107,13 @@ function getDist() {
 
 // Расчет темнового тока
 function calcIt() {
-  It = U * R
+  It = U * R - 0.667
 }
 
 // Расчет фототока
 function calcIf() {
   const denominator = r + 19
-  If = 5000 * U / denominator * 2
+  If = 5000 * U / denominator * denominator
 }
 
 // расчет конечного значения тока
