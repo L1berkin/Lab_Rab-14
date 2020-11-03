@@ -4,82 +4,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap"
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Исследование внутреннего фотоэффекта</title>
 </head>
 
 <body>
   <header class="header">
-    <a href="http://www.physicsleti.ru/" class="header__logo">
-      <img src="assets/physicsleti2.jpg" alt="логотип" width="100%">
+    <div class="menu-btn btn">
+      <div class="menu-btn__top-line line"></div>
+      <div class="menu-btn__middle-line line"></div>
+      <div class="menu-btn__bottom-line line"></div>
+    </div>
+    <a href="" class="header__logo">
+      <img src="assets/header-logo.png" alt="Логотип" width="100%">
     </a>
-    <h1 class="header__title">Исследование внутреннего фотоэффекта</h1>
-    <a href="#" class="header__link">О программе</a>
-    <div class="link__content">
-      <p class="link__text">Виртуальная лабораторная работа по исследованию внутреннего фотоэффекта разработана
-        студентом группы 9201 Денисовым Д.С. под руководством доцента кафедры физики СПБГЭТУ к.ф.-м.н. И.Л. Шейнмана.
-      </p>
-    </div>
+    <h1 class="header__title">
+      Исследование внутреннего фотоэффекта
+    </h1>
+    <button class="header__about btn">
+      О программе
+    </button>
   </header>
-  <section class="sidebar close-s">
-    <h2 class="sidebar__title">Теоретические материалы</h2>
-    <hr>
-    <h4 class="sidebar__title-album">Фото установки</h4>
-    <div class="sidebar__album">
-      <img src="assets/sNF4GDEW4b4.jpg" alt="Фото установки" class="sidebar__main-photo s-photo">
-      <img src="assets/Shem.jpg" alt="Фото схемы" class="sidebar__shem-photo s-photo">
-      <img src="assets/AmperMetr.jpg" alt="Фото амперметра" class="sidebar__amper-photo s-photo">
-      <img src="assets/VoltMetr.jpg" alt="Фото вольтметра" class="sidebar__volt-photo s-photo">
-    </div>
-    <a href="assets/pdf/Iccledovanie_vnutrennego_fotoeffekta.pdf" class="sidebar__title-album" target="_blank">Методические указания</a>
-    <div class="sidebar__btn">
-      <span class="sidebar__open">open &#10148;</span>
-    </div>
-  </section>
   <main class="main">
+    <aside class="aside">
+
+    </aside>
     <div class="wrapper">
       <section class="appliances">
-        <div class="ampermetr">
-          <input type="range" class="ampermetr__range dis-range" min="0" max="100" value="0" step="0.01" disabled>
-          <input type="text" class="ampermetr__value field" value="0.00" readonly>
+        <div class="pribor">
+          <label for="amper-scale" class="pribor__title">Амперметр</label>
+          <input type="range" id="amper-scale" class="pribor__scale amper-scale" min='0' max='100' value='0' step='0.01' disabled>
+          <input type="text" class="pribor__value field" value="0" readonly>
         </div>
-        <div class="voltmetr">
-          <input type="range" class="voltmetr__range dis-range" min="0" max="20" value="0" step="0.1" disabled>
-          <input type="text" class="voltmetr__value field" value="0" readonly>
-        </div>
-      </section>
-      <section class="control">
-        <div class="curtain-setings">
-          <p class="curtain-setings__title">Шторка открыта</p>
-          <input type="checkbox" class="curtain-setings__check">
-        </div>
-        <div class="voltmetr-setings">
-          <p class="voltmetr-setings__title">Регулировка напряжения</p>
-          <input type="range" class="voltmetr-setings__range" min="0" max="20" step="0.1" value="0">
+        <div class="pribor">
+          <label for="volt-scale" class="pribor__title">Вольтметр</label>
+          <input type="range" id="volt-scale" class="pribor__scale volt-scale" min='0' max='20' value='0' step='0.1' disabled>
+          <input type="text" class="pribor__value field" value="0" readonly>
         </div>
       </section>
-      <section class="dist-info">
-        <p class="dist-info__title">Расстояние</p>
-        <input type="text" class="dist-info__value field" value="5 см" readonly>
+      <section class="options">
+        <div class="options-block">
+          <p class="options-block__title">
+            Шторка открыта
+          </p>
+          <input type="checkbox" id="curtain" class="options-block__curtain">
+        </div>
+        <div class="options-block">
+          <p class="options-block__title">
+            Регулировка напряжения
+          </p>
+          <input type="range" id="control-scale" class="options-block__scale" min='0' max='20' value='0' step='0.1'>
+        </div>
       </section>
       <section class="installation">
-        <img src="assets/Lampa.png" alt="Лампа" class="installation__lamp">
-        <div class="installation__runner">
-          <span class="cap open"></span>
-          <img src="assets/priemnik.png" alt="Приемник" class="priemnik">
-          <input type="range" class="ruler-range" min="5" max="40" step="1" value="4">
-        </div>
+
       </section>
     </div>
+
   </main>
   <footer class="footer">
-    <a href="https://etu.ru/" class="footer__logo">
-      <img src="assets/spbetu-logo-ru.svg" alt="Логоти ЛЭТИ" width="100%">
+    <a href="" class="footer__logo">
+      <img src="assets/spbetu-logo-ru.png" alt="ЛЭТИ" width="100%">
     </a>
-    <p class="footer__text">Кафедра физики</p>
+    <p class="footer__text">
+      Кафедра физики
+    </p>
+
   </footer>
 
   <script src="script.js"></script>
