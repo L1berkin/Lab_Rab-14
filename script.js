@@ -1,3 +1,4 @@
+const main = document.querySelector('main')
 // Scale
 const $amperRange = document.querySelector('#amper-scale')
 const $voltRange = document.querySelector('#volt-scale')
@@ -19,31 +20,44 @@ const $menuBtn = document.querySelector('.menu-btn')
 const lines = document.getElementsByClassName('line')
 const $sidebar = document.querySelector('.aside')
 // Sidebar photo
-const sidebarPhotos = document.querySelectorAll('.s-photo')
-
-// console.log(menuBtn, sidebar)
+const sidebarPhotos = document.querySelectorAll('.aside__photo')
+// Modal window
+const $modalBtn = document.querySelector('.header__about')
+const $modal = document.querySelector('.modal')
+const backModal = document.querySelector('.back-window')
 // Sidebar
 
 // Добавление события открытия фото
-// sidebarPhotos.forEach(photo => photo.addEventListener('click', (event) => {
-//   const path = event.target.getAttribute('src')
-//   const alt = event.target.getAttribute('alt')
+sidebarPhotos.forEach(photo => photo.addEventListener('click', (event) => {
+  const path = event.target.getAttribute('src')
+  const alt = event.target.getAttribute('alt')
 
-//   const backWindow = document.createElement('div')
-//   backWindow.classList.add('back-window-photo')
-//   backWindow.dataset.close = 'close'
-//   const templateBigPhoto = `<img src="${path}" alt="${alt}" class="big-Photo">`
+  backModal.classList.add('open-back-window')
+  const templateBigPhoto = `<img src="${path}" alt="${alt}" class="big-photo">`
 
-//   backWindow.insertAdjacentHTML('afterbegin', templateBigPhoto)
-//   document.querySelector('main').insertAdjacentElement('afterbegin', backWindow)
+  backModal.insertAdjacentHTML('afterbegin', templateBigPhoto)
 
-//   // Добавление события закрытия фото
-//   backWindow.addEventListener('click', event => {
-//     if (event.target.dataset.close === 'close') {
-//       document.querySelector('.back-window-photo').remove()
-//     }
-//   })
-// }))
+  // Добавление события закрытия фото
+  backModal.addEventListener('click', event => {
+    if (event.target.dataset.close === 'close') {
+      document.querySelector('.big-photo').remove()
+      backModal.classList.remove('open-back-window')
+    }
+  })
+}))
+
+// Событие открытия модального окна
+function modalOpen() {
+  backModal.classList.add('open-back-window')
+  $modal.classList.remove('close-modal')
+
+  backModal.addEventListener('click', event => {
+    if (event.target.dataset.close === 'close') {
+      backModal.classList.remove('open-back-window')
+      $modal.classList.add('close-modal')
+    }
+  })
+}
 
 // Событие открытия / закрытия меню
 function openCloseMenu() {
@@ -53,7 +67,6 @@ function openCloseMenu() {
 }
 
 function animationBtn() {
-  console.log($menuBtn.classList.contains('menu-btn-open'))
   if ($menuBtn.classList.contains('menu-btn-open')) {
     lines[0].style.transform = 'translateY(11px) rotate(45deg)'
     lines[1].style.transform = 'scale(0)'
@@ -162,6 +175,7 @@ function clickBtn() {
   editBtnText()
 }
 $menuBtn.addEventListener('click', openCloseMenu)
+$modalBtn.addEventListener('click', modalOpen)
 $valueRange.addEventListener('input', calcI)
 $distRange.addEventListener('input', calcI)
 $distRange.addEventListener('input', addShadow)

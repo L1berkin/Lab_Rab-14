@@ -491,3 +491,68 @@
   -webkit-transform: translateX(600px);
           transform: translateX(600px);
 }
+
+.back-window {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.632);
+  opacity: 0;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  z-index: -1;
+}
+
+.big-photo {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.modal {
+  width: 40%;
+  padding: 2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -20%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  z-index: 1000;
+}
+
+.modal__logo {
+  width: 90px;
+  height: 90px;
+  margin: 2em 0;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px;
+          box-shadow: 0 0 5px;
+}
+
+.modal__title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.close-modal {
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+}
+
+.open-back-window {
+  opacity: 1;
+  z-index: 50;
+}

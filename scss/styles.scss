@@ -383,3 +383,58 @@ $sidebar-time: 1s;
 .menu-btn-open {
   transform: translateX(600px);
 }
+
+.back-window {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.632);
+  opacity: 0;
+  transition-duration: 1s;
+  z-index: -1;
+}
+
+.big-photo {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.modal {
+  width: 40%;
+  padding: 2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -20%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  transition-duration: 1s;
+  z-index: 1000;
+
+  &__logo {
+    width: 90px;
+    height: 90px;
+    margin: 2em 0;
+    border-radius: 50%;
+    box-shadow: 0 0 5px;
+  }
+
+  &__title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.close-modal {
+  transform: translateY(-100vh);
+}
+
+.open-back-window {
+  opacity: 1;
+  z-index: 50;
+}
