@@ -1,4 +1,5 @@
 $blue: #5956e9;
+$sidebar-time: 1s;
 
 * {
   padding: 0;
@@ -30,17 +31,75 @@ $blue: #5956e9;
   width: 100%;
   height: 5px;
   border-radius: 5px;
+  transition-duration: $sidebar-time;
 }
 
 .field {
+  padding: .2em 0;
   border-radius: 10px;
   border: 2px solid black;
   text-align: center;
   font-weight: bold;
+  cursor: default;
 }
 /* Меню */
 .aside {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  padding: 2em;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px;
+  transition-property: transform;
+  transition-duration: $sidebar-time;
+  
+  &__hr {
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    margin-top: 1em;
+    border-radius: 1px;
+  }
+
+  &__album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3em 0 1em;
+  }
+
+  &__photo {
+    width: 40%;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 5px;
+      &:hover {
+      border: 2px solid black;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    display: inline-block;
+    padding: .6em 1em;
+    border-radius: 5px;
+    &:hover {
+      background-color: $blue;
+    }
+    &:active {
+      background-color: #fff;
+      color: #000;
+    }
+  }
 }
 
 .header {
@@ -72,6 +131,9 @@ $blue: #5956e9;
   margin-left: 1em;
   background-color: #000;
   border-radius: 5px;
+  transition-property: transform;
+  transition-timing-function: ease;
+  transition-duration: $sidebar-time;
   padding: 10px 5px;
   &:active {
     .line {
@@ -81,6 +143,7 @@ $blue: #5956e9;
 
   &__middle-line {
     margin: 17% 0;
+    transition-duration: .2s;
   }
 }
 
@@ -115,7 +178,7 @@ $blue: #5956e9;
     align-items: center;
     justify-content: center;
     padding: 0 1em;
-    background-color: #fff;
+    background-color: rgb(221, 228, 255);
     border-radius: 10px;
     box-shadow: 0 0 5px;
   }
@@ -162,6 +225,7 @@ $blue: #5956e9;
   margin-left: 2%;
   display: flex;
   justify-content: space-between;
+  cursor: default;
 
   &__item {
     font-weight: bold;
@@ -174,7 +238,7 @@ $blue: #5956e9;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 4em 0;
+  margin: 4em 0 0;
 
   &-block {
     display: flex;
@@ -199,6 +263,7 @@ $blue: #5956e9;
       border: 1px solid black;
       border-radius: 50%;
       transition-duration: .5s;
+      cursor: pointer;
       &:hover {
         background-color: rgb(230, 230, 230);
         box-shadow: 0 0 10px;
@@ -214,7 +279,74 @@ $blue: #5956e9;
       width: 100%;
     }
   }
+
+  &-dist {
+    width: 100%;
+    text-align: center;
+    margin: 1.5em 0;
+
+    &__title {
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+
+    &__field:hover {
+      background-color: rgb(238, 238, 238);
+    }
+  }
 }
+
+.installation {
+  width: 100%;
+  display: flex;
+  padding: 3em 0 0;
+  justify-content: center;
+  align-items: flex-end;
+  border: 5px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  transition-property: box-shadow;
+  transition-duration: 1.5s;
+
+  &__lamp {
+    width: 40%;
+  }
+
+  &__runner {
+    width: 60%;
+    position: relative;
+    background-image: url('/assets/bc__ruler.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 5px 5px 0;
+  }
+
+  &__cap {
+    display: block;
+    width: 10px;
+    height: 5.2vw;
+    position: absolute;
+    left: 0;
+    background-color: #5c6b6f;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 5;
+    transition-property: bottom;
+    transition-duration: 1s;
+  }
+
+  &__priemnik {
+    width: 18%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+  }
+
+  &__ruler {
+    width: 100%;
+  }
+}
+
 
 .footer {
   display: flex;
@@ -222,6 +354,7 @@ $blue: #5956e9;
   justify-content: space-around;
   min-height: 6em;
   padding: 1em 0;
+  margin: 1em 0 0;
   background-color: rgb(37, 37, 37);
 
   &__logo {
@@ -235,29 +368,18 @@ $blue: #5956e9;
   }
 }
 
-.installation {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.open {
+  bottom: 13vw;
+}
 
-  &__lamp {
-    width: 30%;
-  }
+.close {
+  bottom: 8.3vw;
+}
 
-  &__runner {
-    width: 70%;
-    position: relative;
-    padding-top: 4em;
-  }
+.aside-close {
+  transform: translateX(-105%);
+}
 
-  &__priemnik {
-    width: 20%;
-    padding: absolute;
-    left: 0;
-    bottom: 0;
-  }
-
-  &__ruler {
-    width: 100%;
-  }
+.menu-btn-open {
+  transform: translateX(600px);
 }

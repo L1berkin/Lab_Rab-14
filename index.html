@@ -28,14 +28,27 @@
     </button>
   </header>
   <main class="main">
-    <aside class="aside">
-
-    </aside>
+    <asid class="aside aside-close">
+      <h2 class="aside__title">
+        Дополнительные материалы
+      </h2>
+      <hr class="aside__hr">
+      <div class="aside__album">
+        <img src="assets/AmperMetr.jpg" alt="Амперметр" class="aside__photo">
+        <img src="assets/VoltMetr.jpg" alt="Вольтметр" class="aside__photo">
+        <img src="assets/Shem.jpg" alt="Схема установки" class="aside__photo">
+        <img src="assets/installation.jpg" alt="Установка" class="aside__photo">
+      </div>
+      <a href="assets/pdf/Iccledovanie_vnutrennego_fotoeffekta.pdf" class="aside__link">
+        Методические материалы
+      </a>
+    </asid  e>
     <div class="wrapper">
       <section class="appliances">
         <div class="pribor">
           <div class="pribor__window">
-            <input type="range" id="amper-scale" class="pribor__scale amper-scale" min='0' max='100' value='0' step='0.01' disabled>
+            <input type="range" id="amper-scale" class="pribor__scale" min='0' max='100' value='0'
+              step='0.01' disabled>
             <div class="datalist">
               <span class="datalist__item">0</span>
               <span class="datalist__item">10</span>
@@ -55,7 +68,8 @@
         </div>
         <div class="pribor">
           <div class="pribor__window">
-            <input type="range" id="volt-scale" class="pribor__scale volt-scale" min='0' max='20' value='0' step='0.1' disabled>
+            <input type="range" id="volt-scale" class="pribor__scale" min='0' max='20' value='0' step='0.1'
+              disabled>
             <div class="datalist">
               <span class="datalist__item">0</span>
               <span class="datalist__item">5</span>
@@ -80,6 +94,12 @@
             Регулировка напряжения
           </p>
           <input type="range" id="control-scale" class="options-block__scale" min='0' max='20' value='0' step='0.1'>
+        </div>
+        <div class="options-dist">
+          <p class="options-dist__title">
+            Расстояние
+          </p>
+          <input type="text" class="options-dist__field field" value="0 см" title="Изменяется на установке" readonly>
         </div>
       </section>
       <section class="installation">
