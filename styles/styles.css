@@ -553,8 +553,8 @@
 }
 
 .close-modal {
-  -webkit-transform: translateY(-110vh);
-          transform: translateY(-110vh);
+  -webkit-transform: translateY(-250vh);
+          transform: translateY(-250vh);
 }
 
 .open-back-window {
