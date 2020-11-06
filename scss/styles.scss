@@ -9,6 +9,10 @@ $sidebar-time: 1s;
   box-sizing: border-box;
 }
 
+.ERROR {
+  display: none;
+}
+
 .btn {
   white-space: nowrap;
   border: none;
@@ -302,6 +306,7 @@ $sidebar-time: 1s;
   padding: 3em 0 0;
   justify-content: center;
   align-items: flex-end;
+  background-color: rgba(204, 204, 204, 0.449);
   border: 5px solid black;
   border-radius: 15px;
   overflow: hidden;
@@ -367,7 +372,7 @@ $sidebar-time: 1s;
     color: #fff;
   }
 }
-
+// Дополнительные классы
 .open {
   bottom: 13vw;
 }
@@ -431,10 +436,135 @@ $sidebar-time: 1s;
 }
 
 .close-modal {
-  transform: translateY(-100vh);
+  transform: translateY(-110vh);
 }
 
 .open-back-window {
   opacity: 1;
   z-index: 50;
+}
+
+
+@media screen and (min-width: 2000px) {
+  .main {
+    min-height: 85vh;
+  }
+
+  .field {
+    font-size: 1.5em;
+  }
+
+  .pribor {
+    height: 300px;
+    justify-content: space-around;
+  }
+
+  .datalist__item {
+    font-size: 1.2em;
+  }
+
+  .title {
+    font-size: 1.7em;
+  }
+
+  .btn {
+    font-size: 1.5em;
+  }
+
+  .footer__text {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .close {
+    bottom: 9vw;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .options-block {
+    margin-top: 1.5em;
+  }
+}
+
+@media screen and (max-width: 855px) {
+  .close {
+    bottom: 9.4vw;
+  }
+
+  .pribor {
+    margin-bottom: 1em;
+    width: 70%;
+  }
+
+  .options-block {
+    margin: 1em;
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header__title {
+    font-size: 1.4em;
+  }
+
+  .footer__logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .menu-btn {
+    display: none;
+  }
+  
+  .header {
+    margin: 0;
+    height: 15vh;
+    font-size: .8em;
+
+    &__about {
+      display: none;
+    }
+  }
+
+  .modal {
+    display: none;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .wrapper {
+    display: none;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15vh;
+    
+    &__text {
+      font-size: 1em;
+    }
+  }
+
+  .main {
+    background-color: rgba(255, 188, 188, 0.496);
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ERROR {
+    display: block;
+    width: 60%;
+    font-weight: bold;
+    text-align: center;
+  }
 }
